@@ -38,6 +38,7 @@ def create_sequence_diagram_y(eye_y, eye_valid, height, width, offset=0, step=0.
 
     return sequence
 
+
 def create_classified_sequence_diagram_y(eye_y, eye_classification, height, width, offset=0, step=0.5):
     """
     A Function that returns a 2D numpy array representing the sequence diagram on it
@@ -112,6 +113,7 @@ def create_sequence_diagram_x(eye_x, eye_valid, height, width, offset=0, step=0.
 
     return sequence
 
+
 def create_classified_sequence_diagram_x(eye_x, eye_classification, height, width, offset=0, step=0.5):
     """
     A Function that returns a 2D numpy array representing the sequence diagram on it
@@ -135,14 +137,14 @@ def create_classified_sequence_diagram_x(eye_x, eye_classification, height, widt
         break
 
     for idx, x in enumerate(eye_x):
-            old_x = current[1]
-            old_y = current[0]
-            next_y = min(max(0, current[0] + y_step), height - 1)
-            next_x = min(max(0, x), width - 1)
+        old_x = current[1]
+        old_y = current[0]
+        next_y = min(max(0, current[0] + y_step), height - 1)
+        next_x = min(max(0, x), width - 1)
 
-            sequence[int(old_y): int(next_y), old_x] = eye_classification[idx]
-            sequence[int(next_y), old_x:next_x] = eye_classification[idx]
-            sequence[int(next_y), next_x:old_x] = eye_classification[idx]
-            current = (next_y, next_x)
+        sequence[int(old_y): int(next_y), old_x] = eye_classification[idx]
+        sequence[int(next_y), old_x:next_x] = eye_classification[idx]
+        sequence[int(next_y), next_x:old_x] = eye_classification[idx]
+        current = (next_y, next_x)
 
     return sequence

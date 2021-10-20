@@ -1,5 +1,6 @@
 from sonaion_analysis.utils.smallestenclosingcircle import make_circle
 
+
 def create_fixxation_map(eye_x, eye_y, fixxation_classifier):
     """
     :param eye_x:                   an indexable datastructure with the x eye coordinates
@@ -9,7 +10,7 @@ def create_fixxation_map(eye_x, eye_y, fixxation_classifier):
                                     The List is organized Liked this [((circle1_x, circle1_y), circle1_radius), ...])
     """
 
-    # process into fixxstion and saccade movements
+    # process into fixxation and saccade movements
     points_array = []
     currently_fixxation = False
     current_points = []
@@ -28,5 +29,5 @@ def create_fixxation_map(eye_x, eye_y, fixxation_classifier):
             points_array.append([(eye_x[idx], eye_y[idx])])
 
         circles = [make_circle(points) for points in points_array]
-        circles = [((x,y), radius) for (x,y,radius) in circles]
+        circles = [((x, y), radius) for (x, y, radius) in circles]
         return circles

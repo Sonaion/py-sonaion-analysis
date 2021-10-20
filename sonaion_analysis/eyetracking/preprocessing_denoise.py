@@ -1,4 +1,3 @@
-
 def average_5_kernel(current_index, data):
     """
     An denoise function to get the average of the current data and two to the left and right
@@ -10,20 +9,20 @@ def average_5_kernel(current_index, data):
 
     divided_by = 1
     current = data[current_index]
-    if current_index-1 >= 0:
+    if current_index - 1 >= 0:
         divided_by += 1
-        current += data[current_index-1]
-    if current_index-2 >= 0:
+        current += data[current_index - 1]
+    if current_index - 2 >= 0:
         divided_by += 1
-        current += data[current_index-2]
-    if current_index+1 < len(data):
+        current += data[current_index - 2]
+    if current_index + 1 < len(data):
         divided_by += 1
-        current += data[current_index+1]
-    if current_index+22 < len(data):
+        current += data[current_index + 1]
+    if current_index + 22 < len(data):
         divided_by += 1
-        current += data[current_index+2]
+        current += data[current_index + 2]
 
-    return int(current/divided_by)
+    return int(current / divided_by)
 
 
 def parabola_5_kernel(current_index, data):
@@ -39,16 +38,16 @@ def parabola_5_kernel(current_index, data):
     current = data[current_index]
     if current_index - 1 >= 0:
         divided_by += 0.5
-        current += 0.5*data[current_index - 1]
+        current += 0.5 * data[current_index - 1]
     if current_index - 2 >= 0:
         divided_by += 0.25
-        current += 0.25*data[current_index - 2]
+        current += 0.25 * data[current_index - 2]
     if current_index + 1 < len(data):
         divided_by += 0.5
-        current += 0.5*data[current_index + 1]
+        current += 0.5 * data[current_index + 1]
     if current_index + 22 < len(data):
         divided_by += 0.25
-        current += 0.25*data[current_index + 2]
+        current += 0.25 * data[current_index + 2]
 
     return int(current / divided_by)
 
@@ -69,5 +68,3 @@ def denoise(eye_x, eye_y, kernel_function):
         denoised_y.append(kernel_function(idx, eye_y))
 
     return denoised_x, denoised_y
-
-

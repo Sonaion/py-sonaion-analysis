@@ -40,11 +40,12 @@ def count_saccades(saccades):
     is_currently = False
     for value in saccades:
         if value == 1 and is_currently == False:
-            saccade_count +=1
+            saccade_count += 1
             is_currently = True
         if value == 0 and is_currently == True:
             is_currently = False
     return saccade_count
+
 
 def time_of_saccades(saccades, d_time):
     """
@@ -68,6 +69,7 @@ def time_of_saccades(saccades, d_time):
         current_time += d_time
     return saccade_times
 
+
 def average_saccades_time(saccades_times):
     """
 
@@ -75,7 +77,7 @@ def average_saccades_time(saccades_times):
     :return:                returns the average time of saccades
     """
 
-    return sum([saccade_time[1]-saccade_time[0] for saccade_time in saccades_times])/len(saccades_times)
+    return sum([saccade_time[1] - saccade_time[0] for saccade_time in saccades_times]) / len(saccades_times)
 
 
 def classify_fixxation(eye_x, eye_y, d_time, treshhold):
@@ -105,6 +107,7 @@ def classify_fixxation(eye_x, eye_y, d_time, treshhold):
             fixxations.append(1)
     return fixxations
 
+
 def count_fixxations(fixxations):
     """
     A Function that counts the number of distinct fixxations
@@ -116,11 +119,12 @@ def count_fixxations(fixxations):
     is_currently = False
     for value in fixxations:
         if value == 1 and is_currently == False:
-            fixxations_count +=1
+            fixxations_count += 1
             is_currently = True
         if value == 0 and is_currently == True:
             is_currently = False
     return fixxations_count
+
 
 def time_of_fixxations(fixxations, d_time):
     """
