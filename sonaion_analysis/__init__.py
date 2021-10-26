@@ -1,2 +1,1 @@
-
-import eyetracking
+import sonaion_analysis.eyetracking
