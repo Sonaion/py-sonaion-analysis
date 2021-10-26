@@ -21,14 +21,14 @@ def create_fixxation_map(eye_x, eye_y, fixxation_classifier):
         elif classifier == 1:
             current_points.append((eye_x[idx], eye_y[idx]))
         elif classifier == 0 and currently_fixxation == True:
-            points_array.append(current_points.copy())
+            points_array.append((current_points.copy(), True))
             current_points = []
             currently_fixxation = False
-            points_array.append([(eye_x[idx], eye_y[idx])])
+            points_array.append(([(eye_x[idx], eye_y[idx])], False))
         else:
-            points_array.append([(eye_x[idx], eye_y[idx])])
+            points_array.append(([(eye_x[idx], eye_y[idx])], True))
 
-    circles = [make_circle(points) for points in points_array]
-    circles = [((x, y), radius) for (x, y, radius) in circles]
+    circles = [(make_circle(points), is_fixxation) for points, is_fixxation in points_array]
+    circles = [((x, y), radius, is_fixxation) for (x, y, radius, is_fixxation) in circles]
 
     return circles
