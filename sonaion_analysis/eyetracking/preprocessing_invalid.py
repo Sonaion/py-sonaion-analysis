@@ -54,6 +54,7 @@ def replace_with_prev_invalid(eye_x, eye_y, pupil_diameter, eye_valid):
         if value == 1:
             x.append(eye_x[idx])
             y.append(eye_y[idx])
+            pupil.append(pupil_diameter[idx])
             prev_x = eye_x[idx]
             prev_y = eye_y[idx]
             prev_pupil = pupil_diameter[idx]
