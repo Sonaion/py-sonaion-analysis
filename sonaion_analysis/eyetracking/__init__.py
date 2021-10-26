@@ -1,7 +1,1 @@
-import sonaion_analysis.eyetracking.field_of_view as field_of_view
-import sonaion_analysis.eyetracking.fixxationmap as fixxationmap
-import sonaion_analysis.eyetracking.heatmap as heatmap
-import sonaion_analysis.eyetracking.metrics as metrics
-import sonaion_analysis.eyetracking.preprocessing_invalid as preprocessing_invalid
-import sonaion_analysis.eyetracking.preprocessing_denoise as preprocessing_denoise
-import sonaion_analysis.eyetracking.sequence as sequence
+
