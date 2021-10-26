@@ -29,6 +29,6 @@ def create_fixxation_map(eye_x, eye_y, fixxation_classifier):
             points_array.append(([(eye_x[idx], eye_y[idx])], True))
 
     circles = [(make_circle(points), is_fixxation) for points, is_fixxation in points_array]
-    circles = [((x, y), radius, is_fixxation) for (x, y, radius, is_fixxation) in circles]
+    circles = [((x, y), radius, is_fixxation) for ((x, y, radius), is_fixxation) in circles]
 
     return circles
