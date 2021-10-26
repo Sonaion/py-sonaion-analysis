@@ -18,14 +18,16 @@ def classify_saccades(eye_x, eye_y, d_time, treshhold):
     prev_x = eye_x[0]
     prev_y = eye_y[0]
     for idx in range(1, len(eye_x)):
-        current_x = eye_x[1]
-        current_y = eye_y[1]
+        current_x = eye_x[idx]
+        current_y = eye_y[idx]
         distance = math.sqrt(math.pow(current_x - prev_x, 2.0) + math.pow(current_y - prev_y, 2.0))
         velocity = distance / d_time
         if velocity < treshhold:
             saccades.append(0)
         else:
             saccades.append(1)
+        prev_x = current_x
+        prev_y = current_y
     return saccades
 
 
@@ -97,14 +99,16 @@ def classify_fixxation(eye_x, eye_y, d_time, treshhold):
     prev_x = eye_x[0]
     prev_y = eye_y[0]
     for idx in range(1, len(eye_x)):
-        current_x = eye_x[1]
-        current_y = eye_y[1]
+        current_x = eye_x[idx]
+        current_y = eye_y[idx]
         distance = math.sqrt(math.pow(current_x - prev_x, 2.0) + math.pow(current_y - prev_y, 2.0))
         velocity = distance / d_time
         if velocity >= treshhold:
             fixxations.append(0)
         else:
             fixxations.append(1)
+        prev_x = current_x
+        prev_y = current_y
     return fixxations
 
 

@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="py-sonaion-analysis",
-    version="0.0.11",
+    version="0.0.12",
     description="Library for creating visualiziations and analysations of REyeker, REyeker 2.0, Eyetracking, EEG and Behavioral Data.",
     long_description=README,
     long_description_content_type="text/markdown",
