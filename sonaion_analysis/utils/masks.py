@@ -20,9 +20,9 @@ def create_circular_mask(height, width, center=None, radius=None):
         radius = min(center[0], center[1], width - center[0], height - center[1])
 
     Y, X = np.ogrid[:height, :width]
-    x_low = max(center[0] - radius, 0.0)
+    x_low = max(center[0] - radius, 0)
     x_high = min(center[0] + radius, width)
-    y_low = max(center[1] - radius, 0.0)
+    y_low = max(center[1] - radius, 0)
     y_high = min(center[1] + radius, width)
     X = X[:, x_low:x_high]
     Y = Y[y_low:y_high]
