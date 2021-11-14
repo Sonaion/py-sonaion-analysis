@@ -69,6 +69,8 @@ def time_of_saccades(saccades, d_time):
             is_currently = False
             saccade_times.append((current_start_time, current_time))
         current_time += d_time
+    if is_currently == True:
+        saccade_times.append((current_start_time, current_time))
     return saccade_times
 
 
@@ -150,6 +152,8 @@ def time_of_fixxations(fixxations, d_time):
             is_currently = False
             fixxation_times.append((current_start_time, current_time))
         current_time += d_time
+    if is_currently == True:
+        fixxation_times.append((current_start_time, current_time))
     return fixxation_times
 
 
