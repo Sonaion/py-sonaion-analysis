@@ -127,3 +127,18 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+# rust
+
+target/
+build/
+dist/
+*.egg-info/
+.eggs/
+*.so
+*.pyd
+.idea
+
+**/__pycache__
+/.idea/

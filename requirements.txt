@@ -1,0 +1,4 @@
+setuptools ~= 60.8.2
+setuptools-rust ~= 1.1.2
+wheel ~= 0.37.1
+numpy
